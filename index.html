@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnilibros Cultural</title>
+    <link rel="stylesheet" href="estilos/styles.css"> 
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <div class="welcome-title">
+                <h1>Bienvenido Tecnilibros Cultural</h1>
+            </div>
+            <form class="login-form" action="inicio.html" method="post">
+                <input type="text" name="username" placeholder="usuario"/>
+                <input type="password" name="password" placeholder="Contraseña"/>
+                <button type="submit">login</button>
+                <p class="message">No estás registrado? <a href="#" id="show-register-form">Crea tu cuenta</a></p>
+            </form>
+            <form class="register-form">
+                <input type="text" placeholder="Usuario"/>
+                <input type="password" placeholder="Contraseña"/>
+                <input type="text" placeholder="email "/>
+                <button>create</button>
+                <p class="message">Ya registrado? <a href="#" id="show-login-form">Inicia sesión</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Ocultar el formulario de registro inicialmente
+            $(".register-form").hide();
+
+            // Alternar entre formularios al hacer clic en los enlaces
+            $("#show-register-form").click(function() {
+                $(".login-form").hide();
+                $(".register-form").show();
+                return false;
+            });
+
+            $("#show-login-form").click(function() {
+                $(".register-form").hide();
+                $(".login-form").show();
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
